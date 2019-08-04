@@ -15,7 +15,9 @@ class CreateStoriesTable extends Migration
     {
         Schema::create('stories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->string('name', 45);
+            $table->integer('take_days');
+            $table->text('daily_tasks_list');
         });
     }
 

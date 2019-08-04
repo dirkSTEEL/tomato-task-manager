@@ -15,7 +15,15 @@ class CreateProjectTasksTable extends Migration
     {
         Schema::create('project_tasks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->unsignedBigInteger('project_id'); 
+            $table->integer('absolute_day');
+            $table->string('name', 45);
+            $table->unsignedBigInteger('story_id')->nullable();
+
+            // Indexes
+            $table->foreign('project_id', 'fk_project_id_idx')->references('id')->on('projects')->onDelete('cascade');
+            $table->foreign('story_id', 'fk_story_id_idx')->references('id')->on('stories')->onDelete('cascade');
+            $table->unique(['project_id', 'absolute_day'], 'un_project_id_day');
         });
     }
 
