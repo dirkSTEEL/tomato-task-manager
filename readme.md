@@ -1,2 +1,3 @@
-#Tomato Task Manager
-Simple task manager
+## Tomato Task Manager
+
+Simple task management application
