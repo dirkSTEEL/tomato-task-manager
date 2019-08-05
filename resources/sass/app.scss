@@ -6,3 +6,39 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Font Awesome
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+
+#arrange_tasks_wrapper{
+    #arrange_tasks_table{
+        border-collapse:separate; 
+        border-spacing: 0 1rem;
+        th, td{
+            border: none;
+        }
+        tbody{
+            tr{
+                background: $gray-200;
+                td{
+                    vertical-align: middle;
+                    padding-top: 2rem;
+                    padding-bottom: 2rem;
+                    &:first-of-type{
+                        padding-left: 2rem;
+                    }
+                    &:last-of-type{
+                        padding-right: 2rem;
+                    }
+                    .handle{
+                        font-size:2rem;
+                    }
+                }
+            }
+        }
+    }
+}
