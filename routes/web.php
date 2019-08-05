@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// INDEX
+Route::get('/', 'ProjectController@index')->name('index');
+
+// PROJECT TASKS
+Route::get('/project/{id}/tasks', 'ProjectController@manage_tasks')->name('manage_tasks');
+Route::post('/project/{id}/tasks/arrange', 'ProjectController@arrange_tasks')->name('arrange_tasks');
