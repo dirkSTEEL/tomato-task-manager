@@ -113,12 +113,15 @@
                     }
                 }).then(function (response) {
                     self.loading = 0;
-                    console.log( response );
                     self.groups = Object.values(response.data)
                 })
                 .catch(function (error) {
                     self.loading = 0;
-                    console.log(error);
+                    if(typeof error.response.data.errors != 'undefined'){
+                        console.log(error.response.data.errors);
+                    } else {
+                        console.log(error);
+                    }
                 });;
             }
         },
@@ -139,10 +142,6 @@
                 return result;
             }
         },
-
-        mounted: function () {
-            console.log(this.project)
-        }
 
     }
 </script>
