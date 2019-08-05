@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Project;
-use App\Story;
-use App\ProjectTask;
+use App\Models\Project;
+use App\Models\Story;
+use App\Models\ProjectTask;
 
 class DatabaseSeeder extends Seeder
 {
